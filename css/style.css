@@ -1,0 +1,41 @@
+body{
+    background: rgb(198, 211, 223);
+}
+#elements {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    position: relative;
+    width: 40%;
+    background: white;
+    text-align: center;    
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #espacios{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    position: relative;
+    width: 40%;
+    margin-top: 2%;
+    text-align: center; 
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #information{
+    position: relative;
+    margin-left: 25%;
+    width: 40%;
+    text-align: left; 
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #buttonStart{
+    position: relative;
+    text-align: center; 
+    margin-left: auto;
+    margin-right: auto;
+
+  }
