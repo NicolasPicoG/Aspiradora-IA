@@ -8,7 +8,7 @@
     <script src="js/Agente.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <title>Aspiradora</title>
+    <title>Aspiradora IA</title>
 </head>
 
 <body>
@@ -38,10 +38,10 @@
     </div>
 
     <div id="information">
-        <label>Ingrese la posicion inicial de la aspiradora (a ó b)</label>
+        <label>Posicion inicial (A O B)</label>
         <input id="initialPosition" type="text" value="">
         <br>
-        <label>Ingrese la cantidad de intentos de búsqueda</label>
+        <label>Intentos de búsqueda</label>
         <input id="numIntentos" type="text" value="">
 
         <br>
@@ -50,15 +50,13 @@
         <input type="radio" id="female" name="gender" value="B">
         <label for="female">Basura solamente en B</label><br>
         <input type="radio" id="other" name="gender" value="AB">
-        <label for="other">Basura en A y en B</label>
-        <br>
-        <input type="radio" id="other" name="gender" value="-AB">
-        <label for="other">Sin basura en A y en B</label>
-        <br>
-        <div id="buttonStart">
-            <button id="start" class="btn btn-success">Iniciar</button>
-        </div>
-        
+        <label for="other">Basura en A y en B</label><br>
+        <input type="radio" id="other2" name="gender" value="-AB">
+        <label for="other2">Sin basura en A y en B</label><br>
+        <div id="botones">
+            <button id="start" class="btn btn-outline-success">Iniciar</button>
+            <button id="stop" class="btn btn-outline-danger">Detener</button>
+        </div>  
     </div>
 
     <script>
@@ -110,8 +108,8 @@
                 setInterval(moverAgente, 2000);
                 setInterval(prueba, 3000);
 
-
-
+            });
+            $("#stop").click(function () {
             });
         });
     </script>

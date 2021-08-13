@@ -36,10 +36,12 @@ label {
     margin-right: auto;
   }
 
-  #buttonStart{
+  #botones{
     position: relative;
     text-align: center; 
     margin-left: auto;
     margin-right: auto;
+    flex-direction: row;
 
   }
+ 
