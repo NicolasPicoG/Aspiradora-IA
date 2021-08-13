@@ -93,20 +93,20 @@ function getDirty(states){
   if(option == 2){
     if(states[1] == "Limpio" && states[2]=="Sucio"){
       states[1] = "Sucio";
-      document.getElementById("log").innerHTML+="<br><b>-- Sector: ".concat("A").concat(" | Action: ").concat("Sucio").concat("</b>");
+      document.getElementById("log").innerHTML+="<br><b>-- Sector: ".concat("A").concat(" | Acción: ").concat("Sucio").concat("</b>");
     }
     else if(states[1] == "Sucio" && states[2]=="Limpio"){
       states[2] = "Sucio";
-      document.getElementById("log").innerHTML+="<br><b>-- Sector: ".concat("B").concat(" | Action: ").concat("Sucio").concat("</b>");
+      document.getElementById("log").innerHTML+="<br><b>-- Sector: ".concat("B").concat(" | Acción: ").concat("Sucio").concat("</b>");
     }
     else if(states[1] == "Limpio" && states[2]=="Limpio"){
       if(state_option == 1){
         states[1] = "Sucio";
-        document.getElementById("log").innerHTML+="<br><b>-- Sector: ".concat("A").concat(" | Action: ").concat("Sucio").concat("</b>");
+        document.getElementById("log").innerHTML+="<br><b>-- Sector: ".concat("A").concat(" | Acción: ").concat("Sucio").concat("</b>");
       }
       else if(state_option == 2){
         states[2] = "Sucio";
-        document.getElementById("log").innerHTML+="<br><b>-- Sector: ".concat("B").concat(" | Action: ").concat("Sucio").concat("</b>");
+        document.getElementById("log").innerHTML+="<br><b>-- Sector: ".concat("B").concat(" | Acción: ").concat("Sucio").concat("</b>");
       }
     }
     return states;
