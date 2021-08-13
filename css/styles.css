@@ -1,0 +1,104 @@
+body{
+    background-color:  #36363646 ;
+    font-size: 18px;
+}
+
+.centerd {
+    text-align: center;
+}
+
+h2{
+    text-align: center;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: rgb(0, 0, 0);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: normal;
+    letter-spacing: 1px;
+}
+
+/*Estilos de las tablas**/
+
+.table-wrapper{
+    margin: 5px 150px 10px;
+    box-shadow: 0px 35px 50px rgb(0, 0, 0);
+}
+
+.fl-table {
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: normal;
+    border: none;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+    white-space: nowrap;
+    background-color: rgb(105, 105, 105);
+}
+.fl-table tr:nth-child(even) {
+    background: #F8F8F8;
+}
+
+
+.fl-table td, .fl-table th {
+    text-align: center;
+    padding: 8px;
+}
+
+
+.fl-table td {
+    border-right: 1px solid #a7a7a7;
+    font-size: 15px;
+}
+
+
+
+.fl-table thead th {
+    color: #ffffff;
+    background: #000000;
+}
+
+
+.fl-table thead th:nth-child(odd) {
+    color: #ffffff;
+    background: #000000;
+}
+
+
+.card {
+    box-shadow: 0px 35px 50px rgb(0, 0, 0);
+    margin: 5px 25px 5px;
+    transition: 0.3s;
+    background-color: rgb(105, 105, 105);
+  }
+  
+ 
+  .log {
+      color:#ffffff
+  }
+  
+  .container {
+    overflow-y: scroll;
+    height: 308px;
+    color:#ffffff
+  }
+
+  .column {
+  float: left;
+  width: 33.33%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/*Estilo de la imagen**/
+img {
+    margin-left: 34.7%;
+    width: 30%;
+    height: 30%;
+    margin-right: 30.7%;
+    box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
+}

@@ -1,118 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <script src="js/Agente.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <title>Aspiradora IA</title>
-</head>
-
-<body>
-
-    <div id="espacios">
-        <div id="espacioA">
-            <label>Espacio A</label>
+<html>
+    <head>
+        <link href="css/styles.css" rel="stylesheet" type="text/css">
+        <title>Aspiradora IA</title>
+    </head>
+    <body>
+        <h2>Aspiradora IA</h2>
+        <img id="picture" src="img/1_1.png" alt="Estado del Ejercicio">
+        <div class="row">
+            <div class="table-wrapper column">
+                <h2>Lista Estados</h2>
+                <table class="fl-table">
+                    <thead>
+                    <tr>
+                        <th>Casos</th>
+                        <th>Conteo</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Caso 1=> Aspiradora: A, Estado A: Sucio, Estado B: Sucio</td>
+                        <td id="case1_c">0</td>
+                    </tr>
+                    <tr>
+                        <td>Caso 2 => Aspiradora: B, Estado A: Sucio, Estado B: Sucio</td>
+                        <td id="case2_c">0</td>
+                    </tr>
+                    <tr>
+                        <td>Caso 3 => Aspiradora: A, Estado A: Sucio, Estado B: Limpio</td>
+                        <td id="case3_c">0</td>
+                    </tr>
+                    <tr>
+                        <td>Caso 4 => Aspiradora: B, Estado A: Sucio, Estado B: Limpio</td>
+                        <td id="case4_c">0</td>
+                    </tr>
+                    <tr>
+                        <td>Caso 5 => Aspiradora: A, Estado A: Limpio, Estado B: Sucio</td>
+                        <td id="case5_c">0</td>
+                    </tr>
+                    <tr>
+                        <td>Caso 6 => Aspiradora: B, Estado A: Limpio, Estado B: Sucio</td>
+                        <td id="case6_c">0</td>
+                    </tr>
+                    <tr>
+                        <td>Caso 7 => Aspiradora: A, Estado A: Limpio, Estado B: Limpio</td>
+                        <td id="case7_c">0</td>
+                    </tr>
+                    <tr>
+                        <td>Caso 8 => Aspiradora: B, Estado A: Limpio, Estado B: Limpio</td>
+                        <td id="case8_c">0</td>
+                    </tr>
+                     <tbody>
+                </table>
+            </div>
+            
+            <div class="centerd column">
+                <h2>Secuencia de percepciones</h2>
+                <div class="card">
+                    <div class="container">
+                        <p id= "log"></p>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <div id="espacioB">
-            <label>Espacio B</label>
-        </div>
-
-    </div>
-
-    <div id="elements">
-
-        <div id="positionA">
-            <div id="espacio1Agente"><img id="agente" src="images/aspiradora.PNG" /></div>
-            <div id="espacio1Basura"><img id="basura1" src="images/basura.PNG" /></div>
-        </div>
-
-        <div id="positionB">
-            <div id="espacio2Agente"><img id="espacioLimpio" src="images/limpio.PNG" /></div>
-            <div id="espacio2Basura"><img id="basura2" src="images/basura.PNG" /></div>
-        </div>
-    </div>
-
-    <div id="information">
-        <label>Posicion inicial (A O B)</label>
-        <input id="initialPosition" type="text" value="">
-        <br>
-        <label>Intentos de búsqueda</label>
-        <input id="numIntentos" type="text" value="">
-
-        <br>
-        <input type="radio" id="male" name="gender" value="A">
-        <label for="male">Basura solamente en A</label><br>
-        <input type="radio" id="female" name="gender" value="B">
-        <label for="female">Basura solamente en B</label><br>
-        <input type="radio" id="other" name="gender" value="AB">
-        <label for="other">Basura en A y en B</label><br>
-        <input type="radio" id="other2" name="gender" value="-AB">
-        <label for="other2">Sin basura en A y en B</label><br>
-        <div id="botones">
-            <button id="start" class="btn btn-outline-success">Iniciar</button>
-            <button id="stop" class="btn btn-outline-danger">Detener</button>
-        </div>  
-    </div>
-
-    <script>
-        $("input")
-            .keyup(function () {
-                var value = $(this).val();
-                if (value == "a" || value == "A") {
-                    document.getElementById("espacio1Agente").innerHTML = '<img id="limpio" src="images/aspiradora.PNG" />';
-                    document.getElementById("espacio2Agente").innerHTML = '<img id="limpio" src="images/blanco.PNG" />';
-
-                }
-                else if (value == "b" || value == "B") {
-                    document.getElementById("espacio2Agente").innerHTML = '<img id="limpio" src="images/aspiradora.PNG" />';
-                    document.getElementById("espacio1Agente").innerHTML = '<img id="limpio" src="images/blanco.PNG" />';
-                }
-
-            })
-            .keyup();
-
-        $("#numIntentos")
-            .keyup(function () {
-                var contador = $(this).val();
-            })
-            .keyup();
-
-
-        $(document).ready(function () {
-            $("#start").click(function () {
-                
-                document.getElementById("espacio1Basura").innerHTML = '<img id="agente" src="images/limpio.PNG" />';
-                document.getElementById("espacio2Basura").innerHTML = '<img id="agente" src="images/limpio.PNG" />';
-                if ($('input:radio[name=gender]:checked').val() == "A") {
-                    document.getElementById("espacio1Basura").innerHTML = '<img id="agente" src="images/basura.PNG" />';
-                    document.getElementById("espacio2Basura").innerHTML = '<img id="agente" src="images/limpio.PNG" />';
-                }
-                else if ($('input:radio[name=gender]:checked').val() == "B") {
-                    document.getElementById("espacio1Basura").innerHTML = '<img id="agente" src="images/limpio.PNG" />';
-                    document.getElementById("espacio2Basura").innerHTML = '<img id="agente" src="images/basura.PNG" />';
-                }
-                else if ($('input:radio[name=gender]:checked').val() == "AB") {
-                    document.getElementById("espacio1Basura").innerHTML = '<img id="agente" src="images/basura.PNG" />';
-                    document.getElementById("espacio2Basura").innerHTML = '<img id="agente" src="images/basura.PNG" />';
-                }
-                else if ($('input:radio[name=gender]:checked').val() == "-AB") {
-                    document.getElementById("espacio1Basura").innerHTML = '<img id="agente" src="images/limpio.PNG" />';
-                    document.getElementById("espacio2Basura").innerHTML = '<img id="agente" src="images/limpio.PNG" />';
-                }
-
-                setInterval(moverAgente, 2000);
-                setInterval(prueba, 3000);
-
-            });
-            $("#stop").click(function () {
-            });
-        });
-    </script>
-</body>
-
+        
+        <script type="text/javascript" src="js/agente.js"></script>
+    </body>
 </html>
