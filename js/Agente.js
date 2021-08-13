@@ -12,7 +12,7 @@ var contadorMov;
 
 function moverAgente() {
     if (document.getElementById("espacio1Agente").innerHTML = '<img id="agente" src="images/aspiradora.PNG" />') {
-        document.getElementById("espacio1Agente").innerHTML = '<img id="limpio" src="images/limpio.PNG" />';
+        document.getElementById("espacio1Agente").innerHTML = '<img id="limpio" src="images/blanco.PNG" />';
         document.getElementById("espacio2Agente").innerHTML = '<img id="agente" src="images/aspiradora.PNG" />';
     }
     limpiar();
@@ -22,8 +22,8 @@ function moverAgente() {
 }
 
 function prueba() {
-    if (document.getElementById("espacio1Agente").innerHTML = '<img id="agente" src="images/limpio.PNG" />') {
-        document.getElementById("espacio2Agente").innerHTML = '<img id="limpio" src="images/limpio.PNG" />';
+    if (document.getElementById("espacio1Agente").innerHTML = '<img id="agente" src="images/blanco.PNG" />') {
+        document.getElementById("espacio2Agente").innerHTML = '<img id="limpio" src="images/blanco.PNG" />';
         document.getElementById("espacio1Agente").innerHTML = '<img id="agente" src="images/aspiradora.PNG" />';
     }
     contadorMov++;
@@ -35,7 +35,7 @@ function limpiar() {
         && (document.getElementById("espacio1Basura").innerHTML = '<img id="agente" src="images/basura.PNG" />')) {
         document.getElementById("espacio1Basura").innerHTML = '<img id="agente" src="images/limpio.PNG" />';
         document.getElementById("espacio2Agente").innerHTML = '<img id="agente" src="images/aspiradora.PNG" />';
-        document.getElementById("espacio1Agente").innerHTML = '<img id="agente" src="images/limpio.PNG" />';
+        document.getElementById("espacio1Agente").innerHTML = '<img id="agente" src="images/blanco.PNG" />';
     }
 }
 
