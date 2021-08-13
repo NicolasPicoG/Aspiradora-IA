@@ -5,6 +5,12 @@ body{
 label {    
     font-weight: bold;
   }
+
+h2 {
+  font-weight: bold;
+  color: rgb(5, 76, 168);
+}  
+
 #elements {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
